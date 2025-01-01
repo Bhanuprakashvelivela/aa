@@ -1,0 +1,35 @@
+
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>body { margin: 0; }</style>
+    </head>
+    <body>
+        <div class="contra-hire-me-button" data-analyticsuserid="8ca0015c-d139-4b23-84a8-90bc4c38c085" data-theme="light" data-username="babarogic"><a rel="nofollow" target="_blank" href="https://contra.com/babarogic?utm_campaign=HireMeOnContra&amp;utm_medium=8ca0015c-d139-4b23-84a8-90bc4c38c085" title="Contra.com"><img alt="Hire Me on Contra" src="https://contra.com/static/embed/media/hiremeoncontra-light.png" srcset="https://contra.com/static/embed/media/hiremeoncontra-light.png 1x, https://contra.com/static/embed/media/hiremeoncontra-light@2x.png 2x" style="border-width: 0px;"></a></div><script async="" src="https://contra.com/static/embed/sdk.js" charset="utf-8"></script>
+        <script type="module">
+            let height = 0
+
+            function sendEmbedHeight() {
+                window.parent.postMessage({
+                    embedHeight: height
+                }, "*")
+            }
+
+            const observer = new ResizeObserver((entries) => {
+                if (entries.length !== 1) return
+                const entry = entries[0]
+                if (entry.target !== document.body) return
+
+                height = entry.contentRect.height
+                sendEmbedHeight()
+            })
+
+            observer.observe(document.body)
+
+            window.addEventListener("message", (event) => {
+                if (event.source !== window.parent) return
+                if (event.data !== "getEmbedHeight") return
+                sendEmbedHeight()
+            })
+        </script>
+    
+</body></html>
